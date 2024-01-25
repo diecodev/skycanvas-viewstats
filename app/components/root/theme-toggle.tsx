@@ -1,9 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { ThemeOne, ThemeTwo } from "../icons";
-import { cn } from "@root/lib/utils";
-import { useState } from "react";
+import { Moon, Sun } from "../icons";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -17,9 +15,9 @@ export function ThemeToggle() {
       }}
     >
       {theme === "light" ? (
-        <ThemeOne className="w-5 h-5" />
+        <Moon className="w-5 h-5" />
       ) : (
-        <ThemeTwo className="w-5 h-5" />
+        <Sun className="w-5 h-5" />
       )}
     </button>
   );
