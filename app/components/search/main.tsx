@@ -5,6 +5,7 @@ import { HoursChart } from "./hours-chart";
 import { weekDays } from "@root/lib/utils";
 import Image from "next/image";
 import { SearchForm } from "../home/search-form";
+import { Suspense } from "react";
 
 export const MainlyData = ({
   data,
@@ -15,7 +16,9 @@ export const MainlyData = ({
     <aside>
       <Card className="bg-white">
         <div className="mb-6">
-          <SearchForm />
+          <Suspense>
+            <SearchForm />
+          </Suspense>
         </div>
         <div className="grid place-content-center">
           <Image

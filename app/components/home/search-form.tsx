@@ -2,13 +2,16 @@ import { redirectToLocation } from "@root/app/_actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { SearchInput } from "./search-input";
+import { Suspense } from "react";
 
 export const SearchForm = () => (
   <form
     className="max-w-screen-sm mx-auto flex transition-al group relative"
     action={redirectToLocation}
   >
-    <SearchInput />
+    <Suspense>
+      <SearchInput />
+    </Suspense>
     <button
       type="submit"
       className="border-2 border-l-0 rounded-r-full group-focus-within:border-sky-500 dark:group-focus-within:border-indigo-500 dark:border-neutral-600 pr-4 overflow-hidden"
