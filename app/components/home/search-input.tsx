@@ -4,24 +4,27 @@ import { getPossibleCities } from "@root/app/_actions";
 import { cn } from "@root/lib/utils";
 import debounce from "just-debounce-it";
 import Link from "next/link";
-import { ChangeEvent, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import React, { ChangeEvent, useState } from "react";
 
 export const SearchInput = () => {
   const [cities, setCities] = useState<
     { city: string; country: string; lat: number; lon: number }[]
   >([]);
   const [loading, setLoading] = useState(false);
+  const params = useSearchParams();
 
   return (
     <>
       <input
-        className="border-2 outline-none px-4 py-2 bg-transparent text-lg flex-1 group-focus-within::border-sky-500 group-focus-within:dark:border-indigo-500 rounded-l-full border-r-0 dark:border-neutral-600"
+        className="border-2 outline-none px-4 py-2 bg-transparent text-lg flex-1 group-focus-within:border-sky-500 group-focus-within:dark:border-indigo-500 rounded-l-full border-r-0 dark:border-neutral-600"
         type="text"
         name="userInput"
         placeholder="Barcelona, Spain"
         required
         autoComplete="off"
         autoFocus
+        defaultValue={params.get("q") || ""}
         spellCheck="false"
         autoCorrect="off"
         onChange={debounce(async (e: ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +52,7 @@ export const SearchInput = () => {
             <Link
               key={`${city.lat}_${city.lon}`}
               className="py-1 dark:hover:text-white hover:text-black transition-all offset-1 hover:font-medium"
-              href={`/search?lat=${city.lat}&lon=${city.lon}`}
+              href={`/search?q=${city?.city}&lat=${city.lat}&lon=${city.lon}`}
             >
               {city.city}, {city.country}
             </Link>

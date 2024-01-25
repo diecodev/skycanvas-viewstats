@@ -3,7 +3,7 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
   return (
-    <div className="p-4 h-16 pb-0 sticky top-0">
+    <div className="p-4 h-16 pb-0 sticky top-0 z-50">
       <header className="flex backdrop-blur-lg justify-between items-center p-1 max-w-screen-sm mx-auto bg-neutral-400/25 rounded-full">
         <Link
           href="/"
