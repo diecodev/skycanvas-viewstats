@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 export const HighlightCard = ({
   title,
   children,
-  footer,
+  footer = "",
 }: {
   title: string;
   children: ReactNode;
@@ -13,6 +13,6 @@ export const HighlightCard = ({
   <Card className="flex flex-col justify-between items-center gap-y-4">
     <Metric className="!text-lg text-center font-medium">{title}</Metric>
     {children}
-    {footer && <Text className="text-center">{footer}</Text>}
+    <Text className="text-center">{footer}</Text>
   </Card>
 );
