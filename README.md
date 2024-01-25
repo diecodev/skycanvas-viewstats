@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### SkyCanvas Weather App
+
+![SkyCanvas site](https://github.com/diecodev/moick-saas/assets/51871681/24f5f41e-5aa5-4ae3-a50a-dad692a1ed81)
+
+SkyCanvas is a weather application developed as a solution to the technical test for ViewStats (website: [https://viewstats.com](https://viewstats.com)). The application is designed to provide users with accurate and up-to-date weather information for cities around the world.
+
+## Features
+
+- **Homepage (Index):**
+  - The main landing page where users get introduced to the SkyCanvas weather app.
+- **Weather Information:**
+  - Route: `/search?q={city_name}&lat={city_lat}&lon={city_lon}`
+  - This route provides detailed weather information for the selected city.
+- **Autocomplete City Search:**
+
+  - The application supports a user-friendly autocomplete feature when searching for cities, making it easy to find the desired location.
+
+- **Optimized Data Fetching:**
+
+  - The data fetching process is optimized to prevent unnecessary API requests, ensuring efficient use of resources and a smoother user experience.
+
+- **Error Handling:**
+
+  - The application includes robust error handling to gracefully manage unexpected situations, providing a seamless experience even in challenging conditions.
+
+- **Loading State:**
+  - The project adheres to the specified requirements by displaying a loading state, keeping users informed during data retrieval.
 
 ## Getting Started
 
-First, run the development server:
+To run the SkyCanvas Weather App locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/diecodev/skycanvas-viewstats.git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   cd skycanvas-viewstats
+   pnpm install
+   ```
 
-## Learn More
+3. Run the application:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   pnpm dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to explore the SkyCanvas Weather App.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> [!WARNING]
+> You need to create an account in [Open Weather](https://openweathermap.org/api/one-call-3#current) and subscribe to the on call service. You need to copy and paste your api key in a `.env.local` file (take a look in the .env.example file to know how to name your env vars)
